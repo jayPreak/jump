@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://drqqu0cpgngqj"]
+[gd_scene load_steps=7 format=3 uid="uid://drqqu0cpgngqj"]
 
 [ext_resource type="PackedScene" uid="uid://cpaxil1cjdgyl" path="res://player.tscn" id="1_iv4m6"]
 
@@ -7,6 +7,19 @@ size = Vector3(60, 2, 60)
 
 [sub_resource type="BoxMesh" id="BoxMesh_yh0qn"]
 size = Vector3(60, 2, 60)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tm1u7"]
+albedo_color = Color(1, 0.176471, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5gw2q"]
+material = SubResource("StandardMaterial3D_tm1u7")
+
+[sub_resource type="Curve3D" id="Curve3D_xxs0q"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -13.0143, 0, -13.9922, 0, 0, 0, 0, 0, 0, 13.0198, 0, -13.987, 0, 0, 0, 0, 0, 0, 12.9595, 0, 15.0041, 0, 0, 0, 0, 0, 0, -13.0069, 0, 15.0321, 0, 0, 0, 0, 0, 0, -13.0143, 0, -13.9922),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
 
 [node name="Main" type="Node"]
 
@@ -31,3 +44,27 @@ transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19)
 projection = 1
 size = 19.0
+
+[node name="Cylinders" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -14)
+mesh = SubResource("CylinderMesh_5gw2q")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Cylinders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 15)
+mesh = SubResource("CylinderMesh_5gw2q")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Cylinders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -14)
+mesh = SubResource("CylinderMesh_5gw2q")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Cylinders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 15)
+mesh = SubResource("CylinderMesh_5gw2q")
+
+[node name="SpawnPath" type="Path3D" parent="."]
+curve = SubResource("Curve3D_xxs0q")
+
+[node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
+transform = Transform3D(-0.000198766, 0, -1, 0, 1, 0, 1, 0, -0.000198766, -13.0143, 0, -13.9922)
