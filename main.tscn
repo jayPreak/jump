@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://drqqu0cpgngqj"]
+[gd_scene load_steps=9 format=3 uid="uid://drqqu0cpgngqj"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_c8qoc"]
 [ext_resource type="PackedScene" uid="uid://cpaxil1cjdgyl" path="res://player.tscn" id="1_iv4m6"]
+[ext_resource type="PackedScene" uid="uid://0kdqcvi4yg3" path="res://mob.tscn" id="2_rakje"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kpol7"]
 size = Vector3(60, 2, 60)
@@ -24,6 +25,7 @@ point_count = 5
 
 [node name="Main" type="Node"]
 script = ExtResource("1_c8qoc")
+mob_scene = ExtResource("2_rakje")
 
 [node name="Ground" type="StaticBody3D" parent="."]
 
@@ -70,3 +72,5 @@ curve = SubResource("Curve3D_xxs0q")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
 transform = Transform3D(-0.000199958, 0, -1, 0, 1, 0, 1, 0, -0.000199958, -13.0143, 0, -13.9922)
+
+[node name="MobTimer" type="Timer" parent="."]
