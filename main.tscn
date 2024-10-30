@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://drqqu0cpgngqj"]
+[gd_scene load_steps=8 format=3 uid="uid://drqqu0cpgngqj"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_c8qoc"]
 [ext_resource type="PackedScene" uid="uid://cpaxil1cjdgyl" path="res://player.tscn" id="1_iv4m6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kpol7"]
@@ -22,6 +23,7 @@ _data = {
 point_count = 5
 
 [node name="Main" type="Node"]
+script = ExtResource("1_c8qoc")
 
 [node name="Ground" type="StaticBody3D" parent="."]
 
@@ -67,4 +69,4 @@ mesh = SubResource("CylinderMesh_5gw2q")
 curve = SubResource("Curve3D_xxs0q")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
-transform = Transform3D(-0.000198766, 0, -1, 0, 1, 0, 1, 0, -0.000198766, -13.0143, 0, -13.9922)
+transform = Transform3D(-0.000199958, 0, -1, 0, 1, 0, 1, 0, -0.000199958, -13.0143, 0, -13.9922)
