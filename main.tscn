@@ -28,6 +28,8 @@ script = ExtResource("1_c8qoc")
 mob_scene = ExtResource("2_rakje")
 
 [node name="Ground" type="StaticBody3D" parent="."]
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 shape = SubResource("BoxShape3D_kpol7")
