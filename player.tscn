@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://player.gd" id="1_yypf6"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ritho"]
-radius = 0.8
+radius = 0.723319
 
 [node name="Player" type="CharacterBody3D"]
 collision_mask = 6
